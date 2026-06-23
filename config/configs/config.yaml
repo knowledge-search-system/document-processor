@@ -1,0 +1,23 @@
+env: local
+
+grpc:
+  port: 9091
+
+http:
+  port: 8081
+
+postgres:
+  dsn: "postgres://postgres:postgres@postgres:5432/document_processor?sslmode=disable"
+  max_conns: 10
+  min_conns: 2
+
+search_engine:
+  grpc_addr: "search-engine:9090"
+
+upload:
+  max_file_size_bytes: 20971520
+  chunk_size: 1000
+  chunk_overlap: 100
+
+logger:
+  level: "info"
