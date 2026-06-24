@@ -1,0 +1,56 @@
+syntax = "proto3";
+
+package documentprocessor.v1;
+
+option go_package = "github.com/knowledge-search-system/document-processor/proto/documentprocessor/v1;documentprocessorv1";
+
+import "google/api/annotations.proto";
+import "google/protobuf/timestamp.proto";
+
+message Document {
+  string id = 1;
+  string file_name = 2;
+  string status = 3;
+  google.protobuf.Timestamp uploaded_at = 4;
+  string error_message = 5;
+}
+
+message ListDocumentsRequest {
+  int32 page = 1;
+  int32 page_size = 2;
+}
+
+message ListDocumentsResponse {
+  repeated Document documents = 1;
+  int32 total = 2;
+}
+
+message GetDocumentRequest {
+  string id = 1;
+}
+
+message UploadDocumentRequest {
+  string file_name = 1;
+  bytes content = 2;
+}
+
+message UploadDocumentResponse {
+  string id = 1;
+  string status = 2;
+}
+
+service DocumentService {
+  rpc ListDocuments(ListDocumentsRequest) returns (ListDocumentsResponse) {
+    option (google.api.http) = {
+      get: "/api/v1/documents"
+    };
+  }
+
+  rpc GetDocument(GetDocumentRequest) returns (Document) {
+    option (google.api.http) = {
+      get: "/api/v1/documents/{id}"
+    };
+  }
+
+  rpc UploadDocument(UploadDocumentRequest) returns (UploadDocumentResponse);
+}
