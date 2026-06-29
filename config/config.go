@@ -9,13 +9,13 @@ import (
 )
 
 type Config struct {
-	Env         string            `yaml:"env"`
-	GRPC        GRPCConfig        `yaml:"grpc"`
-	HTTP        HTTPConfig        `yaml:"http"`
-	Postgres    PostgresConfig    `yaml:"postgres"`
+	Env          string             `yaml:"env"`
+	GRPC         GRPCConfig         `yaml:"grpc"`
+	HTTP         HTTPConfig         `yaml:"http"`
+	Postgres     PostgresConfig     `yaml:"postgres"`
 	SearchEngine SearchEngineConfig `yaml:"search_engine"`
-	Upload      UploadConfig      `yaml:"upload"`
-	Logger      LoggerConfig      `yaml:"logger"`
+	Upload       UploadConfig       `yaml:"upload"`
+	Logger       LoggerConfig       `yaml:"logger"`
 }
 
 type GRPCConfig struct {

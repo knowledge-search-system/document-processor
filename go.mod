@@ -2,15 +2,13 @@ module github.com/knowledge-search-system/document-processor
 
 go 1.26
 
-replace github.com/knowledge-search-system/search-engine => ../search-engine
-
 require (
 	github.com/Masterminds/squirrel v1.5.4
 	github.com/google/uuid v1.6.0
 	github.com/grpc-ecosystem/grpc-gateway/v2 v2.29.0
 	github.com/jackc/pgx/v5 v5.10.0
 	github.com/joho/godotenv v1.5.1
-	github.com/knowledge-search-system/search-engine v0.0.0-00010101000000-000000000000
+	github.com/knowledge-search-system/search-engine v0.0.0-20260629115655-187f216c3f74
 	github.com/ledongthuc/pdf v0.0.0-20250511090121-5959a4027728
 	go.opentelemetry.io/otel/trace v1.44.0
 	go.uber.org/fx v1.24.0

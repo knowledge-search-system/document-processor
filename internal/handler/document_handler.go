@@ -3,9 +3,9 @@ package handler
 import (
 	"context"
 
-	documentprocessorv1 "github.com/knowledge-search-system/document-processor/proto/documentprocessor/v1"
 	"github.com/knowledge-search-system/document-processor/internal/model"
 	"github.com/knowledge-search-system/document-processor/internal/service"
+	documentprocessorv1 "github.com/knowledge-search-system/document-processor/proto/documentprocessor/v1"
 	"google.golang.org/protobuf/types/known/timestamppb"
 )
 
