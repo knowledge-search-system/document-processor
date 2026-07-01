@@ -26,7 +26,7 @@ COPY --from=builder /app/config ./config
 
 USER app
 
-EXPOSE 8080
-EXPOSE 9090
+EXPOSE 8081
+EXPOSE 9091
 
 ENTRYPOINT ["./document-processor"]
