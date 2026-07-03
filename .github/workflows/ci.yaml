@@ -54,3 +54,6 @@ jobs:
 
       - name: Build Docker image
         run: docker build -t document-processor:test .
+
+      - name: Build migrate Docker image
+        run: docker build -f Dockerfile.migrate -t document-processor-migrate:test .
