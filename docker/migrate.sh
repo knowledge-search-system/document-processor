@@ -8,6 +8,9 @@ do
     sleep 2
 done
 
+echo "Waiting 10 seconds..."
+sleep 10
+
 echo "Running migrations..."
 
 exec /bin/goose \
