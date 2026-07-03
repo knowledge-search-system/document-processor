@@ -23,6 +23,7 @@ RUN addgroup -S app && adduser -S app -G app
 
 COPY --from=builder /app/document-processor .
 COPY --from=builder /app/config ./config
+COPY --from=builder /app/migrations ./migrations
 
 USER app
 
