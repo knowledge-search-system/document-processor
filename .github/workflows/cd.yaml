@@ -54,3 +54,11 @@ jobs:
           push: true
           tags: ${{ steps.meta-migrate.outputs.tags }}
           labels: ${{ steps.meta-migrate.outputs.labels }}
+
+      - name: Trigger infra deployment
+        run: |
+          curl -X POST \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: token ${{ secrets.INFRA_DEPLOY_TOKEN }}" \
+            https://api.github.com/repos/knowledge-search-system/infra/dispatches \
+            -d '{"event_type":"deploy"}'
